@@ -1,0 +1,8 @@
+[Unit]
+Description=FAH controller based on screen locking/unlocking signals
+
+[Service]
+ExecStart=/usr/bin/gnome-folding-at-screenlock.sh
+
+[Install]
+WantedBy=default.target
