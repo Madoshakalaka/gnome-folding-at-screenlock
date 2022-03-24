@@ -16,7 +16,7 @@ screen is locked.
 
 This is very convenient for those who have a habit of manually locking the screen when they are away (by hitting <kbd>super</kbd> + <kbd>l</kbd> for example).
 
-Also, by default GNOME should lock the screen after some time of inactivity, which makes `gnome-folding-at-screenlock` 
+Also, by default GNOME should lock the screen after some time of inactivity (5 minutes by default), which makes `gnome-folding-at-screenlock` 
 a good idle detector too.
 
 # Steps
@@ -24,11 +24,11 @@ a good idle detector too.
 1. `sudo systemctl enable foldingathome && sudo systemctl start foldingathome` If you haven't already done so.
 Note our script won't start or stop the `foldingathome` service. 
 It assumes the service is started and pauses/unpauses folding via `FAHClient`. 
-The setting will be persisted in the configuration file located at `/etc/foldingathome/config.xml`.
+The pause or unpause will be persisted in the configuration file located at `/etc/foldingathome/config.xml`.
 
 2. Go to the dashboard in your browser at `http://localhost:7396/` and change some options. You should tick the
 "While I'm working" option because we are not relying on FAH's idle detection anymore.
-Also, you can set up your ideal power level too. Stop the folding at last by hitting the "Stop Folding" button, 
+Also, you can set up your ideal power level too. Finally, stop the folding by hitting the "Stop Folding" button, 
 which actually adds a `<paused v='true'>` tag to your config file (It does exactly the same thing our script does when you wake up your monitor).
 
 3. copy the [gnome-folding-at-screenlock.sh](gnome-folding-at-screenlock.sh) file to `/usr/bin/` and give it
@@ -39,7 +39,7 @@ Note, you shouldn't do this as root. The locking and unlocking of the screen is 
 5. `systemctl --user enable gnome-folding-at-screenlock.service`. Do not run as root or with sudo.
 6. `systemctl --user start gnone-folding-at-screenlock.service`. Do not run as root or with sudo.
 7. Done! Now you can just hit <kbd>super</kbd> + <kbd>l</kbd> and lock the screen whenever you will be away from the computer.
-Proteins will start folding right away! When you are back, move the mouse or press the keyboard to awake your computer, 
-and the folding will stop!
+Proteins will start folding right away! When you are back, unlock your computer, 
+and the folding will pause immediately!
 8. For bonus points, go to GNOME's `Settings > Power` and turn off automatic suspension, otherwise no extended folding 
-will be possible.
+will be possible. By default, suspension happens after 20 minutes of inactivity, this will stop FAH too.
