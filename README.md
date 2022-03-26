@@ -32,7 +32,7 @@ Also, you can set up your ideal power level too. Finally, stop the folding by hi
 which actually adds a `<paused v='true'>` tag to your config file (It does exactly the same thing our script does when you wake up your monitor).
 
 3. copy the [gnome-folding-at-screenlock.sh](gnome-folding-at-screenlock.sh) file to `/usr/bin/` and give it
-the executable permission with `chmod +x /usr/bin/gnome-folding-at-screenlock.sh`.
+the executable permission with `sudo chmod +x /usr/bin/gnome-folding-at-screenlock.sh`.
 4. copy the [gnome-folding-at-screenlock.service](gnome-folding-at-screenlock.service) file to `~/.config/systemd/user/`.
 You might need to `mkdir -p ~/.config/systemd/user/` first.
 Note, you shouldn't do this as root. The locking and unlocking of the screen is tied to the user using the desktop.
