@@ -37,7 +37,7 @@ the executable permission with `sudo chmod +x /usr/bin/gnome-folding-at-screenlo
 You might need to `mkdir -p ~/.config/systemd/user/` first.
 Note, you shouldn't do this as root. The locking and unlocking of the screen is tied to the user using the desktop.
 5. `systemctl --user enable gnome-folding-at-screenlock.service`. Do not run as root or with sudo.
-6. `systemctl --user start gnone-folding-at-screenlock.service`. Do not run as root or with sudo.
+6. `systemctl --user start gnome-folding-at-screenlock.service`. Do not run as root or with sudo.
 7. Done! Now you can just hit <kbd>super</kbd> + <kbd>l</kbd> and lock the screen whenever you will be away from the computer.
 Proteins will start folding right away! When you are back, unlock your computer, 
 and the folding will pause immediately!
